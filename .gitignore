@@ -9,8 +9,7 @@ logs_terminal/
 logs/
 .DS_Store
 
-# ignore the ile run.ipynb
-run.ipynb
+
 run.sh
 run_with_neptune.py
 exp_test.sh

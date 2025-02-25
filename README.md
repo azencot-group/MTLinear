@@ -1,4 +1,5 @@
-# A Multi-Task Learning Approach to Linear Multivariate Forecasting
+# A Multi-Task Learning Approach to Linear Multivariate Forecasting (AISTATS 2025 poster)
+
 
 Official implementation of:
 "[A Multi-Task Learning Approach to Linear Multivariate Forecasting](https://arxiv.org/abs/2502.03571)". 
