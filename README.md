@@ -54,7 +54,7 @@ If you find this repository useful for your work, please consider citing it as f
 ```
 
 
-## Contribution
+## Acknowledgement
 
 
 This code is simply built on the code base of Autoformer. We appreciate the following GitHub repos a lot for their valuable code base or datasets:
