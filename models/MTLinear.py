@@ -27,9 +27,7 @@ class Model(nn.Module):
         self.pred_len = configs.pred_len
         self.channels = configs.enc_in
 
-
         self.cluster_dist= configs.cluster_dist
-
         self.variate_clusters  = self.set_variate_clusters()
         print("self.args.variate_clusters")
         print(self.variate_clusters)

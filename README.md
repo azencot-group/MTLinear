@@ -60,7 +60,7 @@ If you find this repository useful for your work, please consider citing it as f
 
 This code is simply built on the code base of Autoformer. We appreciate the following GitHub repos a lot for their valuable code base or datasets:
 
-The implementation of Autoformer, Informer, and Transformer is from https://github.com/thuml/Autoformer
+Autoformer repo can be found at https://github.com/thuml/Autoformer
 
 The implementation of DLinear, NLinear is from https://github.com/cure-lab/LTSF-Linear
 
