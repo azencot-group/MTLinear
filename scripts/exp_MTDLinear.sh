@@ -11,7 +11,7 @@ lr=0.01 #learning rate
 seed=2021
 
 # layer type
-lt=NLinear
+lt=DLinear
 
 # grid params
 for pp in 1 2

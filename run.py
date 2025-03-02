@@ -4,7 +4,6 @@ import torch
 from exp.exp_main import Exp_Main
 import random
 import numpy as np
-import neptune # todo
 
 parser = argparse.ArgumentParser(description='Autoformer & Transformer family for Time Series Forecasting')
 
@@ -88,11 +87,6 @@ parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple g
 parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
 parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
-# Neptune todo
-parser.add_argument('--project', type=str, default="azencot-group/Ablation-MultiTask", help='neptune project')
-parser.add_argument('--token', type=str, default="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJh\
-cGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiJlZDU5ZjRiOC04NjljLTQ1NGYtOTFjMi01ODRjZjBjNWE1Mj\
-gifQ==", help='neptune api token')
 
 args = parser.parse_args()
 
@@ -134,9 +128,7 @@ if args.is_training:
             args.penalty_param,
             args.cluster_dist, ii)
         
-        run = neptune.init_run(project=args.project, api_token=args.token,git_ref=False)
-        run['params'] = vars(args)
-        
+
 
         random.seed(args.seed+ii)
         torch.manual_seed(args.seed+ii)
@@ -149,17 +141,12 @@ if args.is_training:
         if not args.train_only:
             print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
             exp.test(setting)
-            #test todo
-            folder_path = './results/' + setting + '/'
-            metrics = np.load(folder_path + 'metrics.npy', allow_pickle = True)
-            run['metrics'] = {"mae": metrics[0], "mse": metrics[1]}
 
         if args.do_predict:
             print('>>>>>>>predicting : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
             exp.predict(setting, True)
 
         torch.cuda.empty_cache()
-        run.stop()
 
 
 else:

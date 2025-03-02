@@ -29,7 +29,7 @@ class Model(nn.Module):
 
         self.cluster_dist= configs.cluster_dist
         self.variate_clusters  = self.set_variate_clusters()
-        print("self.args.variate_clusters")
+        print("variate-cluster allocation:")
         print(self.variate_clusters)
 
         # for DLinear layer
