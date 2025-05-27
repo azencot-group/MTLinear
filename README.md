@@ -4,7 +4,7 @@
 Official implementation of:
 "[A Multi-Task Learning Approach to Linear Multivariate Forecasting](https://arxiv.org/abs/2502.03571)". 
 
-## TLDR
+## TL;DR
 
 This project proposes a multi-task learning (MTL) approach to linear multivariate time series forecasting (TSF). The method involves analyzing gradient conflicts and variate correlations to motivate variate grouping and gradient scaling. Variates are clustered based on their correlations, and separate weights are assigned to each cluster to reduce computational demands. A gradient magnitude penalty is introduced to balance the optimization process within each group. The resulting framework, MTLinear, effectively addresses MTL challenges and demonstrates superior performance on various datasets compared to existing baselines.
 ![image](pics/mtlin.png)
